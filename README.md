@@ -42,8 +42,7 @@ StonyBrook_PDAC/
 │   │   ├── limma_K17_GATA6_vs_K17.csv
 │   │   └── limma_K17_vs_All_others.csv
 │   └── msigdb_v2023.2.Hs_GMTs/
-│       ├── c2.cgp.v2023.2.Hs.symbols.gmt
-│       └── h.all.v2023.2.Hs.symbols.gmt
+│       └── README.md
 │
 └── scripts/
     ├── global.R
@@ -55,8 +54,6 @@ StonyBrook_PDAC/
 
 Output directories are created automatically when the analysis scripts are
 executed.
-
-The MSigDB reference gene-set files are included in the repository.
 
 ## Input Data
 
@@ -84,16 +81,16 @@ protein abundance matrix.
 
 `input/msigdb_v2023.2.Hs_GMTs/`
 
-Contains two MSigDB v2023.2 human gene-set collections:
+The gene set enrichment analyses require two human MSigDB v2023.2 collections:
 
-- `c2.cgp.v2023.2.Hs.symbols.gmt`
-- `h.all.v2023.2.Hs.symbols.gmt`
+- `h.all.v2023.2.Hs.symbols.gmt` — Hallmark gene sets
+- `c2.cp.v2023.2.Hs.symbols.gmt` — Canonical Pathways
 
-These files are used for gene-set enrichment analysis (GSEA) within the
-differential abundance workflow.
+These third-party reference files are not redistributed with this repository.
 
-The MSigDB files are third-party reference data and remain subject to their
-applicable licensing and redistribution terms.
+Instructions for obtaining the required files from MSigDB and placing them in
+the appropriate directory are provided in
+`input/msigdb_v2023.2.Hs_GMTs/README.md`.
 
 ## Software Requirements
 
@@ -384,8 +381,9 @@ used for IPA but does not reproduce the proprietary IPA analysis environment.
 ## Reproducibility
 
 This repository provides the R analysis scripts, protein abundance matrix,
-sample metadata, MSigDB reference gene sets, and limma-derived IPA input files
-associated with the proteomic analyses described in the manuscript.
+sample metadata, instructions for obtaining the MSigDB reference gene sets, and
+limma-derived IPA input files associated with the proteomic analyses described
+in the manuscript.
 
 The IPA input files are archived in `input/ipa_input_files/`, allowing the
 reported pathway analyses to be performed using the same differential abundance
